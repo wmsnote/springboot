@@ -11,5 +11,5 @@ MESSAGE = input("请输入提交信息: ")
 
 os.system("gitbook build ./ ./docs --clean")
 os.system("git add .")
-os.system("git commit -m " + MESSAGE)
+os.system("git commit -m %s" % MESSAGE)
 os.system("git push")
