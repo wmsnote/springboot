@@ -13,7 +13,7 @@ def git_commit():
     message = input("请输入提交信息: ")
     os.system("git add .")
     os.system("git commit -m %s" % message)
-    os.system("git push")
+    return os.system("git push")
 
 print("gitbook build ... , please waiting...")
 os.system("gitbook build ./ ./docs --clean")
@@ -22,5 +22,5 @@ print("gitbook build to docs dir finished !")
 FLAG = input("是否同步文件到git远程仓库(y/n)? ")
 
 if FLAG == "y":
-    git_commit()
-    print("代码同步完成!")
+    code = git_commit()
+    print("返回code: ", code)
