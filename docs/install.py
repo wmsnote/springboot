@@ -18,9 +18,9 @@ def git_commit():
 print("gitbook build ... , please waiting...")
 os.system("gitbook build ./ ./docs --clean")
 print("gitbook build to docs dir finished !")
+
 FLAG = input("是否同步文件到git远程仓库(y/n)? ")
+
 if FLAG == "y":
     git_commit()
-
-
-
+    print("代码同步完成!")
