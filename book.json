@@ -10,7 +10,8 @@
         "code",
         "page-toc-button",
         "popup",
-        "back-to-top-button"
+        "back-to-top-button",
+        "emphasize"
     ],
     "pluginsConfig": {
         "tbfed-pagefooter": {

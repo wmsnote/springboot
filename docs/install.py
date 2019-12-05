@@ -17,17 +17,17 @@ def git_commit():
 
 def gitbook_build():
     print("gitbook build ... , please waiting...")
-    os.system("gitbook build ./ ./docs --clean")
+    flag = os.system("gitbook build ./ ./docs --clean")
     print("gitbook build to docs dir finished !")
+    return flag
 
+SUCCESS_FLAG = gitbook_build()
 
-gitbook_build()
-
-FLAG = input("是否同步文件到git远程仓库(y/n)? ")
-
-if FLAG == "y": 
-    CODE = git_commit()
-    if CODE == 0:
-        print("success -- ", "提交成功")
-    else:
-        print("error -- 提交失败, ", "返回code: ", CODE)
+if SUCCESS_FLAG == 0:
+    FLAG = input("是否同步文件到git远程仓库(y/n)? ")
+    if FLAG == "y": 
+        CODE = git_commit()
+        if CODE == 0:
+            print("success -- ", "提交成功")
+        else:
+            print("error -- 提交失败, ", "返回code: ", CODE)
