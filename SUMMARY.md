@@ -6,4 +6,12 @@
     * [数据库中间件详解 | 珍藏版](part-db-table/003.md)
 * [boot日志](log/readme.md)
     * [springboot使用logback](log/sboot-logback.md)
-
+* [字段校验](bean-validate/readme.md)
+    * [一、最佳实践](bean-validate/1.Java-Bean-Validate.md)
+    * [二、最佳实践](bean-validate/2.Java-Bean-Validate.md)
+    * [三、最佳实践](bean-validate/3.Java-Bean-Validate.md)
+    * [四、最佳实践](bean-validate/4.Java-Bean-Validate.md)
+    * [五、参数校验实战](bean-validate/5.Java-Bean-Validate.md)
+    * [六、手动校验工具类](bean-validate/6.Java-Bean-Validate.md)
+    * [七、校验注解参考手册](bean-validate/7.Java-Bean-Validate.md)
+    * [八、自定义校验规则](bean-validate/8.Java-Bean-Validate.md)

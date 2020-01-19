@@ -1,0 +1,1265 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>八、自定义校验规则 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="7.Java-Bean-Validate.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    分库分表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../part-db-table/001.html">
+            
+                <a href="../part-db-table/001.html">
+            
+                    
+                    MySQL数据库之互联网常用分库分表方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../part-db-table/002.html">
+            
+                <a href="../part-db-table/002.html">
+            
+                    
+                    一文读懂分库分表的技术演进（最佳实践）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../part-db-table/003.html">
+            
+                <a href="../part-db-table/003.html">
+            
+                    
+                    数据库中间件详解 | 珍藏版
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../log/readme.html">
+            
+                <a href="../log/readme.html">
+            
+                    
+                    boot日志
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../log/sboot-logback.html">
+            
+                <a href="../log/sboot-logback.html">
+            
+                    
+                    springboot使用logback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    字段校验
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="1.Java-Bean-Validate.html">
+            
+                <a href="1.Java-Bean-Validate.html">
+            
+                    
+                    一、最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2.Java-Bean-Validate.html">
+            
+                <a href="2.Java-Bean-Validate.html">
+            
+                    
+                    二、最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="3.Java-Bean-Validate.html">
+            
+                <a href="3.Java-Bean-Validate.html">
+            
+                    
+                    三、最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="4.Java-Bean-Validate.html">
+            
+                <a href="4.Java-Bean-Validate.html">
+            
+                    
+                    四、最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="5.Java-Bean-Validate.html">
+            
+                <a href="5.Java-Bean-Validate.html">
+            
+                    
+                    五、参数校验实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="6.Java-Bean-Validate.html">
+            
+                <a href="6.Java-Bean-Validate.html">
+            
+                    
+                    六、手动校验工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="7.Java-Bean-Validate.html">
+            
+                <a href="7.Java-Bean-Validate.html">
+            
+                    
+                    七、校验注解参考手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.8" data-path="8.Java-Bean-Validate.html">
+            
+                <a href="8.Java-Bean-Validate.html">
+            
+                    
+                    八、自定义校验规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >八、自定义校验规则</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x89C4;&#x5219;">&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x89C4;&#x5219;</h1>
+<blockquote>
+<p>SpringMVC&#x670D;&#x52A1;&#x5668;&#x9A8C;&#x8BC1;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</p>
+<ol>
+<li>&#x4E00;&#x79CD;&#x662F;&#x57FA;&#x4E8E;Spring&#x7684;Validator&#x63A5;&#x53E3;&#xFF08;&#x5FFD;&#x7565;&#xFF09;</li>
+<li>&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;Annotaion JSR-303&#x6807;&#x51C6;&#x7684;&#x9A8C;&#x8BC1;</li>
+</ol>
+</blockquote>
+<p>&#x4E0B;&#x9762;&#x4E3B;&#x8981;&#x662F;&#x5B66;&#x4E60;&#x8FD9;&#x4E24;&#x79CD;,&#x5DE5;&#x4F5C;&#x4E2D;&#x63A8;&#x8350;&#x540E;&#x8005;,&#x65B9;&#x4FBF;&#x5F88;&#x591A;</p>
+<h2 id="1-&#x57FA;&#x4E8E;spring&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6269;&#x5C55;">1. &#x57FA;&#x4E8E;spring&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6269;&#x5C55;</h2>
+<h3 id="11-&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x7C7B;">1.1 &#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x7C7B;</h3>
+<p>&#x6821;&#x68C0;&#x7684;&#x7C7B;UserValidator,&#x8BA9;&#x5176;&#x5B9E;&#x73B0;Validator,&#x8986;&#x76D6;&#x5176;&#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> main.java.model.User;
+<span class="hljs-keyword">import</span> org.springframework.validation.Errors;
+<span class="hljs-keyword">import</span> org.springframework.validation.Validator;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserValidator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Validator</span> </span>{
+
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">supports</span><span class="hljs-params">(Class&lt;?&gt; aClass)</span> </span>{
+        <span class="hljs-comment">//&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x7C7B;,&#x8FD9;&#x91CC;&#x662F;User</span>
+        <span class="hljs-keyword">return</span> User.class.equals(aClass);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">validate</span><span class="hljs-params">(Object o, Errors errors)</span> </span>{
+        User u = (User) o;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == u.getPassword() || <span class="hljs-string">&quot;&quot;</span>.equals(u.getPassword())){
+            <span class="hljs-comment">//&#x6B64;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x52A0;&#x56DB;&#x4E2A;&#x53C2;&#x6570;,&#x7B2C;&#x4E00;&#x4E2A;&#x8868;&#x5355;&#x57DF;field,</span>
+            <span class="hljs-comment">//&#x533A;&#x5206;&#x662F;&#x54EA;&#x4E2A;&#x8868;&#x5355;&#x51FA;&#x9519;,&#x7B2C;&#x4E8C;&#x4E2A;errorCode&#x9519;&#x8BEF;&#x7801;,</span>
+            <span class="hljs-comment">//&#x7B2C;&#x4E09;&#x4E2A;&#x5236;&#x5B9A;&#x4E86;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x5360;&#x4F4D;&#x7B26;,&#x7B2C;&#x56DB;&#x4E2A;&#x5177;&#x4F53;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</span>
+            <span class="hljs-comment">//&#x7B80;&#x5199;&#x7248;&#x53EF;&#x4EE5;&#x628A;2,3&#x53C2;&#x6570;&#x53BB;&#x6389;</span>
+            errors.rejectValue(<span class="hljs-string">&quot;password&quot;</span>,<span class="hljs-keyword">null</span>,<span class="hljs-keyword">null</span>,<span class="hljs-string">&quot;password is null&quot;</span>);
+        }
+    }
+}
+</code></pre>
+<h3 id="12-&#x6CE8;&#x518C;&#x6821;&#x9A8C;&#x5668;">1.2 &#x6CE8;&#x518C;&#x6821;&#x9A8C;&#x5668;</h3>
+<pre><code>@Controller
+@RequestMapping(&quot;/user&quot;)
+public class HelloController {
+
+    //&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;Controller&#x7C7B;&#x4E2D;&#x901A;&#x8FC7;@InitBinder&#x6807;&#x8BB0;&#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x6709;&#x5728;&#x8BF7;&#x6C42;&#x5F53;&#x524D;Controller&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x88AB;&#x6267;&#x884C;
+    //&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6CE8;&#x518C;&#x6821;&#x9A8C;&#x5668;
+    @InitBinder
+    public void initBainder(DataBinder binder){
+        binder.replaceValidators(new UserValidator());
+
+    }
+</code></pre><h2 id="2-&#x57FA;&#x4E8E;jsr&#x6807;&#x51C6;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6269;&#x5C55;">2. &#x57FA;&#x4E8E;JSR&#x6807;&#x51C6;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6269;&#x5C55;</h2>
+<blockquote>
+<p>&#x5DF2;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x6821;&#x9A8C;&#x4E3A;&#x4F8B;</p>
+</blockquote>
+<h3 id="21-&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6CE8;&#x89E3;">2.1 &#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x6CE8;&#x89E3;</h3>
+<p>&#x901A;&#x8FC7;<code>@Constraint(validatedBy=IdCardValidator.class)</code>&#x6307;&#x660E;&#x5177;&#x4F53;&#x7684;&#x6821;&#x9A8C;&#x5668;&#x5373;&#x53EF;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> ly.net.common;
+
+<span class="hljs-keyword">import</span> java.lang.annotation.Documented;
+<span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+
+<span class="hljs-keyword">import</span> javax.validation.Constraint;
+<span class="hljs-keyword">import</span> javax.validation.Payload;
+
+<span class="hljs-comment">//&#x5B9E;&#x73B0;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;&#x7684;&#x6CE8;&#x89E3;</span>
+<span class="hljs-meta">@Target</span>({ ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.ANNOTATION_TYPE })
+<span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="hljs-meta">@Constraint</span>(validatedBy=IdCardValidator.class)
+<span class="hljs-meta">@Documented</span>
+<span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> IdCardValid {
+
+    <span class="hljs-function">String <span class="hljs-title">message</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>;
+
+    <span class="hljs-comment">// &#x5206;&#x7EC4;</span>
+    Class&lt;?&gt;[] groups() <span class="hljs-keyword">default</span> {};
+
+    <span class="hljs-comment">// &#x8D1F;&#x8F7D;</span>
+    Class&lt;? extends Payload&gt;[] payload() <span class="hljs-keyword">default</span> {};
+
+    <span class="hljs-comment">// &#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x65F6;&#x4F7F;&#x7528;</span>
+    <span class="hljs-meta">@Target</span>({ ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.ANNOTATION_TYPE })
+    <span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+    <span class="hljs-meta">@Documented</span>
+    <span class="hljs-meta">@interface</span> List {
+        IdCardValid[] value();
+    }
+
+
+
+
+<span class="hljs-comment">//     @NotNull(groups = {PersonAddView.class, PersonModifyView.class}, message = &quot;&#x6DFB;&#x52A0;&#x3001;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x65F6;&#x540D;&#x5B57;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;, payload = ValidateErrorLevel.Info.class)</span>
+<span class="hljs-comment">//        @ListNotHasNull.List({</span>
+<span class="hljs-comment">//                @ListNotHasNull(groups = {PersonAddView.class}, message = &quot;&#x6DFB;&#x52A0;&#x4E0A;Name&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;),</span>
+<span class="hljs-comment">//                @ListNotHasNull(groups = {PersonModifyView.class}, message = &quot;&#x4FEE;&#x6539;&#x65F6;Name&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;)})</span>
+<span class="hljs-comment">//        private String name;</span>
+}
+</code></pre>
+<h3 id="22-&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x5668;">2.2 &#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x5668;</h3>
+<p>&#x8FD9;&#x91CC;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;<code>implements ConstraintValidator&lt;IdCardValid,String&gt;</code>,&#x7B2C;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x6307;&#x5411;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6821;&#x9A8C;&#x6CE8;&#x89E3;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x662F;&#x6821;&#x9A8C;&#x5B57;&#x6BB5;&#x7684;&#x7C7B;&#x578B;&#xFF0C;
+&#x4E5F;&#x662F;<code>isValid</code>&#x65B9;&#x6CD5;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7C7B;&#x578B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> ly.net.common;
+
+<span class="hljs-keyword">import</span> javax.validation.ConstraintValidator;
+<span class="hljs-keyword">import</span> javax.validation.ConstraintValidatorContext;
+
+<span class="hljs-keyword">import</span> org.apache.commons.lang3.StringUtils;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IdCardValidator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ConstraintValidator</span>&lt;<span class="hljs-title">IdCardValid</span>,<span class="hljs-title">String</span>&gt; </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">(IdCardValid constraintAnnotation)</span> </span>{
+
+    }
+<span class="hljs-comment">//&#x4F7F;&#x7528;IdCardUtils&#x76F4;&#x63A5;&#x9A8C;&#x8BC1;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isValid</span><span class="hljs-params">(String value, ConstraintValidatorContext context)</span> </span>{
+        Boolean  flag =<span class="hljs-keyword">true</span>;
+        <span class="hljs-keyword">if</span>(StringUtils.isBlank(value)){
+            <span class="hljs-keyword">return</span> flag;
+        }
+        <span class="hljs-keyword">if</span>(!IdcardUtils.validateCard(value)){
+            flag = <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">return</span> flag;
+        }
+        <span class="hljs-keyword">return</span> flag;
+    }
+
+
+
+}
+</code></pre>
+<h3 id="23-&#x4F7F;&#x7528;">2.3 &#x4F7F;&#x7528;</h3>
+<p> &#x4F7F;&#x7528;<code>@Validated</code>&#x6307;&#x5B9A;&#x8981;&#x6821;&#x9A8C;&#x7684;bean</p>
+<pre><code class="lang-java">    <span class="hljs-meta">@PostMapping</span>(<span class="hljs-string">&quot;/add-apply-money&quot;</span>)
+    <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">&quot;&#x7533;&#x8BF7;&#x501F;&#x6B3E;&quot;</span>, notes = <span class="hljs-string">&quot;#####====&#x5B57;&#x6BB5;&#x8BF4;&#x660E;====&quot;</span>
+            + <span class="hljs-string">&quot;#####&#x6027;&#x522B;&#xFF11;&#x7537;&#xFF12;&#x5973;\n&quot;</span>
+            + <span class="hljs-string">&quot;#####&#x5A5A;&#x59FB;&#x72B6;&#x51B5;&#xFF11;&#x672A;&#x5A5A;&#xFF12;&#x5DF2;&#x5A5A;&#xFF13;&#x79BB;&#x5F02;&#xFF14;&#x4E27;&#x5076;\n&quot;</span>
+            + <span class="hljs-string">&quot;#####&#x5B66;&#x5386;&#xFF11;&#x521D;&#x4E2D;&#x4EE5;&#x4E0B;&#xFF12;&#x4E2D;&#x4E13;&#xFF13;&#x9AD8;&#x4E2D;&#xFF14;&#x5927;&#x4E13;&#xFF15;&#x672C;&#x79D1;&#xFF16;&#x7855;&#x58EB;&#x4EE5;&#x4E0A;\n&quot;</span>
+            + <span class="hljs-string">&quot;#####&#x6237;&#x53E3;&#x7C7B;&#x578B;&#xFF11;&#x672C;&#x5E02;&#xFF12;&#x672C;&#x7701;&#x975E;&#x672C;&#x5E02;&#xFF13;&#x5916;&#x7701;\n&quot;</span>
+            + <span class="hljs-string">&quot;#####&#x5C45;&#x4F4F;&#x72B6;&#x51B5;&#xFF11;&#x4E2A;&#x4EBA;&#x540D;&#x4E0B;&#x6709;&#x4F4F;&#x623F;&#xFF08;&#x6309;&#x63ED;&#x4E2D;&#xFF09;&#xFF12;&#x4E2A;&#x4EBA;&#x540D;&#x4E0B;&#x6709;&#x4F4F;&#x623F;&#xFF08;&#x975E;&#x6309;&#x63ED;&#xFF09;&#xFF13;&#x5BB6;&#x4EBA;&#x540D;&#x4E0B;&#x81EA;&#x7531;&#x4F4F;&#x623F;&#xFF14;&#x81EA;&#x5EFA;&#x623F;&#xFF15;&#x79DF;&#x8D41;&#xFF16;&#x5176;&#x4ED6;\n&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Result&lt;String&gt; <span class="hljs-title">addApplyMoney</span><span class="hljs-params">(@RequestBody @Validated ApplyBorrowMoneyInfo applyBorrowMoneyInfo)</span><span class="hljs-keyword">throws</span> Exception </span>{
+
+        logger.info(<span class="hljs-string">&quot;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x662F;&#xFF1A;applyBorrowMoneyInfo={}&quot;</span>,applyBorrowMoneyInfo);
+
+        <span class="hljs-keyword">return</span> borrowApplyService.addApplyMoney(applyBorrowMoneyInfo);
+    }
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ApplyBorrowMoneyInfo</span> </span>{
+
+
+    <span class="hljs-meta">@ApiModelProperty</span>(<span class="hljs-string">&quot;&#x7533;&#x8BF7;&#x4EBA;id&quot;</span>)
+    <span class="hljs-keyword">private</span> String createUserId;
+    <span class="hljs-meta">@ApiModelProperty</span>(<span class="hljs-string">&quot;&#x771F;&#x5B9E;&#x59D3;&#x540D;&quot;</span>)
+    <span class="hljs-meta">@NotBlank</span>(message = <span class="hljs-string">&quot;trueName&#x4E0D;&#x80FD;&#x4E3A;null&quot;</span>)
+    <span class="hljs-keyword">private</span> String trueName;
+    <span class="hljs-meta">@ApiModelProperty</span>(<span class="hljs-string">&quot;&#x6027;&#x522B;&#xFF11;&#x7537;&#xFF12;&#x5973;&quot;</span>)
+    <span class="hljs-meta">@Range</span>(min = <span class="hljs-number">1</span>,max = <span class="hljs-number">2</span>,message = <span class="hljs-string">&quot;sex&#x503C;&#x53EA;&#x80FD;&#x662F;1&#x6216;2&quot;</span>)
+    <span class="hljs-keyword">private</span> Integer sex;
+
+    <span class="hljs-meta">@ApiModelProperty</span>(<span class="hljs-string">&quot;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&quot;</span>)
+    <span class="hljs-meta">@NotBlank</span>(message = <span class="hljs-string">&quot;creditCardNum&#x4E0D;&#x80FD;&#x4E3A;null&quot;</span>)
+    <span class="hljs-meta">@IdCardValid</span>(message = <span class="hljs-string">&quot;creditCardNum&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;</span>)
+    <span class="hljs-keyword">private</span> String creditCardNum;
+</code></pre>
+<h2 id="3-&#x5DE5;&#x5177;&#x7C7B;">3. &#x5DE5;&#x5177;&#x7C7B;</h2>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> ly.net.common;
+
+
+<span class="hljs-keyword">import</span> java.text.ParseException;
+<span class="hljs-keyword">import</span> java.text.SimpleDateFormat;
+<span class="hljs-keyword">import</span> java.util.Calendar;
+<span class="hljs-keyword">import</span> java.util.Date;
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-keyword">import</span> org.apache.commons.lang3.StringUtils;
+
+
+
+<span class="hljs-comment">/**
+ * &#x8EAB;&#x4EFD;&#x8BC1;&#x5DE5;&#x5177;&#x7C7B;
+ * 
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IdcardUtils</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StringUtils</span> </span>{
+
+    <span class="hljs-comment">/** &#x4E2D;&#x56FD;&#x516C;&#x6C11;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x6700;&#x5C0F;&#x957F;&#x5EA6;&#x3002; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> CHINA_ID_MIN_LENGTH = <span class="hljs-number">15</span>;
+
+    <span class="hljs-comment">/** &#x4E2D;&#x56FD;&#x516C;&#x6C11;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> CHINA_ID_MAX_LENGTH = <span class="hljs-number">18</span>;
+
+    <span class="hljs-comment">/** &#x7701;&#x3001;&#x76F4;&#x8F96;&#x5E02;&#x4EE3;&#x7801;&#x8868; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String cityCode[] = {
+            <span class="hljs-string">&quot;11&quot;</span>, <span class="hljs-string">&quot;12&quot;</span>, <span class="hljs-string">&quot;13&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>, <span class="hljs-string">&quot;15&quot;</span>, <span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;22&quot;</span>, <span class="hljs-string">&quot;23&quot;</span>, <span class="hljs-string">&quot;31&quot;</span>, <span class="hljs-string">&quot;32&quot;</span>, <span class="hljs-string">&quot;33&quot;</span>, <span class="hljs-string">&quot;34&quot;</span>, <span class="hljs-string">&quot;35&quot;</span>, <span class="hljs-string">&quot;36&quot;</span>, <span class="hljs-string">&quot;37&quot;</span>, <span class="hljs-string">&quot;41&quot;</span>,
+            <span class="hljs-string">&quot;42&quot;</span>, <span class="hljs-string">&quot;43&quot;</span>, <span class="hljs-string">&quot;44&quot;</span>, <span class="hljs-string">&quot;45&quot;</span>, <span class="hljs-string">&quot;46&quot;</span>, <span class="hljs-string">&quot;50&quot;</span>, <span class="hljs-string">&quot;51&quot;</span>, <span class="hljs-string">&quot;52&quot;</span>, <span class="hljs-string">&quot;53&quot;</span>, <span class="hljs-string">&quot;54&quot;</span>, <span class="hljs-string">&quot;61&quot;</span>, <span class="hljs-string">&quot;62&quot;</span>, <span class="hljs-string">&quot;63&quot;</span>, <span class="hljs-string">&quot;64&quot;</span>, <span class="hljs-string">&quot;65&quot;</span>, <span class="hljs-string">&quot;71&quot;</span>,
+            <span class="hljs-string">&quot;81&quot;</span>, <span class="hljs-string">&quot;82&quot;</span>, <span class="hljs-string">&quot;91&quot;</span>
+    };
+
+    <span class="hljs-comment">/** &#x6BCF;&#x4F4D;&#x52A0;&#x6743;&#x56E0;&#x5B50; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> power[] = {
+            <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>
+    };
+
+    <span class="hljs-comment">/** &#x7B2C;18&#x4F4D;&#x6821;&#x68C0;&#x7801; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String verifyCode[] = {
+            <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-string">&quot;8&quot;</span>, <span class="hljs-string">&quot;7&quot;</span>, <span class="hljs-string">&quot;6&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>
+    };
+    <span class="hljs-comment">/** &#x6700;&#x4F4E;&#x5E74;&#x9650; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> MIN = <span class="hljs-number">1930</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Map&lt;String, String&gt; cityCodes = <span class="hljs-keyword">new</span> HashMap&lt;String, String&gt;();
+    <span class="hljs-comment">/** &#x53F0;&#x6E7E;&#x8EAB;&#x4EFD;&#x9996;&#x5B57;&#x6BCD;&#x5BF9;&#x5E94;&#x6570;&#x5B57; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Map&lt;String, Integer&gt; twFirstCode = <span class="hljs-keyword">new</span> HashMap&lt;String, Integer&gt;();
+    <span class="hljs-comment">/** &#x9999;&#x6E2F;&#x8EAB;&#x4EFD;&#x9996;&#x5B57;&#x6BCD;&#x5BF9;&#x5E94;&#x6570;&#x5B57; */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Map&lt;String, Integer&gt; hkFirstCode = <span class="hljs-keyword">new</span> HashMap&lt;String, Integer&gt;();
+    <span class="hljs-keyword">static</span> {
+        cityCodes.put(<span class="hljs-string">&quot;11&quot;</span>, <span class="hljs-string">&quot;&#x5317;&#x4EAC;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;12&quot;</span>, <span class="hljs-string">&quot;&#x5929;&#x6D25;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;13&quot;</span>, <span class="hljs-string">&quot;&#x6CB3;&#x5317;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;14&quot;</span>, <span class="hljs-string">&quot;&#x5C71;&#x897F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;15&quot;</span>, <span class="hljs-string">&quot;&#x5185;&#x8499;&#x53E4;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;&#x8FBD;&#x5B81;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;22&quot;</span>, <span class="hljs-string">&quot;&#x5409;&#x6797;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;23&quot;</span>, <span class="hljs-string">&quot;&#x9ED1;&#x9F99;&#x6C5F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;31&quot;</span>, <span class="hljs-string">&quot;&#x4E0A;&#x6D77;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;32&quot;</span>, <span class="hljs-string">&quot;&#x6C5F;&#x82CF;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;33&quot;</span>, <span class="hljs-string">&quot;&#x6D59;&#x6C5F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;34&quot;</span>, <span class="hljs-string">&quot;&#x5B89;&#x5FBD;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;35&quot;</span>, <span class="hljs-string">&quot;&#x798F;&#x5EFA;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;36&quot;</span>, <span class="hljs-string">&quot;&#x6C5F;&#x897F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;37&quot;</span>, <span class="hljs-string">&quot;&#x5C71;&#x4E1C;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;41&quot;</span>, <span class="hljs-string">&quot;&#x6CB3;&#x5357;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;42&quot;</span>, <span class="hljs-string">&quot;&#x6E56;&#x5317;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;43&quot;</span>, <span class="hljs-string">&quot;&#x6E56;&#x5357;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;44&quot;</span>, <span class="hljs-string">&quot;&#x5E7F;&#x4E1C;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;45&quot;</span>, <span class="hljs-string">&quot;&#x5E7F;&#x897F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;46&quot;</span>, <span class="hljs-string">&quot;&#x6D77;&#x5357;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;50&quot;</span>, <span class="hljs-string">&quot;&#x91CD;&#x5E86;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;51&quot;</span>, <span class="hljs-string">&quot;&#x56DB;&#x5DDD;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;52&quot;</span>, <span class="hljs-string">&quot;&#x8D35;&#x5DDE;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;53&quot;</span>, <span class="hljs-string">&quot;&#x4E91;&#x5357;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;54&quot;</span>, <span class="hljs-string">&quot;&#x897F;&#x85CF;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;61&quot;</span>, <span class="hljs-string">&quot;&#x9655;&#x897F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;62&quot;</span>, <span class="hljs-string">&quot;&#x7518;&#x8083;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;63&quot;</span>, <span class="hljs-string">&quot;&#x9752;&#x6D77;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;64&quot;</span>, <span class="hljs-string">&quot;&#x5B81;&#x590F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;65&quot;</span>, <span class="hljs-string">&quot;&#x65B0;&#x7586;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;71&quot;</span>, <span class="hljs-string">&quot;&#x53F0;&#x6E7E;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;81&quot;</span>, <span class="hljs-string">&quot;&#x9999;&#x6E2F;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;82&quot;</span>, <span class="hljs-string">&quot;&#x6FB3;&#x95E8;&quot;</span>);
+        cityCodes.put(<span class="hljs-string">&quot;91&quot;</span>, <span class="hljs-string">&quot;&#x56FD;&#x5916;&quot;</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">10</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-number">11</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-number">12</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-number">13</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-number">14</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;F&quot;</span>, <span class="hljs-number">15</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;G&quot;</span>, <span class="hljs-number">16</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;H&quot;</span>, <span class="hljs-number">17</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;J&quot;</span>, <span class="hljs-number">18</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;K&quot;</span>, <span class="hljs-number">19</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;L&quot;</span>, <span class="hljs-number">20</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;M&quot;</span>, <span class="hljs-number">21</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;N&quot;</span>, <span class="hljs-number">22</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;P&quot;</span>, <span class="hljs-number">23</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;Q&quot;</span>, <span class="hljs-number">24</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;R&quot;</span>, <span class="hljs-number">25</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;S&quot;</span>, <span class="hljs-number">26</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;T&quot;</span>, <span class="hljs-number">27</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;U&quot;</span>, <span class="hljs-number">28</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;V&quot;</span>, <span class="hljs-number">29</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-number">30</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;Y&quot;</span>, <span class="hljs-number">31</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;W&quot;</span>, <span class="hljs-number">32</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;Z&quot;</span>, <span class="hljs-number">33</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;I&quot;</span>, <span class="hljs-number">34</span>);
+        twFirstCode.put(<span class="hljs-string">&quot;O&quot;</span>, <span class="hljs-number">35</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-number">1</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-number">2</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-number">3</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;R&quot;</span>, <span class="hljs-number">18</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;U&quot;</span>, <span class="hljs-number">21</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;Z&quot;</span>, <span class="hljs-number">26</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;X&quot;</span>, <span class="hljs-number">24</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;W&quot;</span>, <span class="hljs-number">23</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;O&quot;</span>, <span class="hljs-number">15</span>);
+        hkFirstCode.put(<span class="hljs-string">&quot;N&quot;</span>, <span class="hljs-number">14</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5C06;15&#x4F4D;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x8F6C;&#x6362;&#x4E3A;18&#x4F4D;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            15&#x4F4D;&#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     * <span class="hljs-doctag">@return</span> 18&#x4F4D;&#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">conver15CardTo18</span><span class="hljs-params">(String idCard)</span> </span>{
+        String idCard18 = <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">if</span> (idCard.length() != CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        <span class="hljs-keyword">if</span> (isNum(idCard)) {
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x51FA;&#x751F;&#x5E74;&#x6708;&#x65E5;</span>
+            String birthday = idCard.substring(<span class="hljs-number">6</span>, <span class="hljs-number">12</span>);
+            Date birthDate = <span class="hljs-keyword">null</span>;
+            <span class="hljs-keyword">try</span> {
+                birthDate = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;yyMMdd&quot;</span>).parse(birthday);
+            } <span class="hljs-keyword">catch</span> (ParseException e) {
+                e.printStackTrace();
+            }
+            Calendar cal = Calendar.getInstance();
+            <span class="hljs-keyword">if</span> (birthDate != <span class="hljs-keyword">null</span>)
+                cal.setTime(birthDate);
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x51FA;&#x751F;&#x5E74;(&#x5B8C;&#x5168;&#x8868;&#x73B0;&#x5F62;&#x5F0F;,&#x5982;&#xFF1A;2010)</span>
+            String sYear = String.valueOf(cal.get(Calendar.YEAR));
+            idCard18 = idCard.substring(<span class="hljs-number">0</span>, <span class="hljs-number">6</span>) + sYear + idCard.substring(<span class="hljs-number">8</span>);
+            <span class="hljs-comment">// &#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x6570;&#x7EC4;</span>
+            <span class="hljs-keyword">char</span>[] cArr = idCard18.toCharArray();
+            <span class="hljs-keyword">if</span> (cArr != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">int</span>[] iCard = converCharToInt(cArr);
+                <span class="hljs-keyword">int</span> iSum17 = getPowerSum(iCard);
+                <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6821;&#x9A8C;&#x4F4D;</span>
+                String sVal = getCheckCode18(iSum17);
+                <span class="hljs-keyword">if</span> (sVal.length() &gt; <span class="hljs-number">0</span>) {
+                    idCard18 += sVal;
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+                }
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        <span class="hljs-keyword">return</span> idCard18;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;&#x8EAB;&#x4EFD;&#x8BC1;&#x662F;&#x5426;&#x5408;&#x6CD5;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">validateCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        String card = idCard.trim();
+        <span class="hljs-keyword">if</span> (validateIdCard18(card)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+        <span class="hljs-keyword">if</span> (validateIdCard15(card)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+        String[] cardval = validateIdCard10(card);
+        <span class="hljs-keyword">if</span> (cardval != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">if</span> (cardval[<span class="hljs-number">2</span>].equals(<span class="hljs-string">&quot;true&quot;</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;18&#x4F4D;&#x8EAB;&#x4EFD;&#x7F16;&#x7801;&#x662F;&#x5426;&#x5408;&#x6CD5;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x662F;&#x5426;&#x5408;&#x6CD5;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">validateIdCard18</span><span class="hljs-params">(String idCard)</span> </span>{
+        <span class="hljs-keyword">boolean</span> bTrue = <span class="hljs-keyword">false</span>;
+        <span class="hljs-keyword">if</span> (idCard.length() == CHINA_ID_MAX_LENGTH) {
+            <span class="hljs-comment">// &#x524D;17&#x4F4D;</span>
+            String code17 = idCard.substring(<span class="hljs-number">0</span>, <span class="hljs-number">17</span>);
+            <span class="hljs-comment">// &#x7B2C;18&#x4F4D;</span>
+            String code18 = idCard.substring(<span class="hljs-number">17</span>, CHINA_ID_MAX_LENGTH);
+            <span class="hljs-keyword">if</span> (isNum(code17)) {
+                <span class="hljs-keyword">char</span>[] cArr = code17.toCharArray();
+                <span class="hljs-keyword">if</span> (cArr != <span class="hljs-keyword">null</span>) {
+                    <span class="hljs-keyword">int</span>[] iCard = converCharToInt(cArr);
+                    <span class="hljs-keyword">int</span> iSum17 = getPowerSum(iCard);
+                    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6821;&#x9A8C;&#x4F4D;</span>
+                    String val = getCheckCode18(iSum17);
+                    <span class="hljs-keyword">if</span> (val.length() &gt; <span class="hljs-number">0</span>) {
+                        <span class="hljs-keyword">if</span> (val.equalsIgnoreCase(code18)) {
+                            bTrue = <span class="hljs-keyword">true</span>;
+                        }
+                    }
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> bTrue;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;15&#x4F4D;&#x8EAB;&#x4EFD;&#x7F16;&#x7801;&#x662F;&#x5426;&#x5408;&#x6CD5;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            &#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x662F;&#x5426;&#x5408;&#x6CD5;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">validateIdCard15</span><span class="hljs-params">(String idCard)</span> </span>{
+        <span class="hljs-keyword">if</span> (idCard.length() != CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">if</span> (isNum(idCard)) {
+            String proCode = idCard.substring(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+            <span class="hljs-keyword">if</span> (cityCodes.get(proCode) == <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            }
+            String birthCode = idCard.substring(<span class="hljs-number">6</span>, <span class="hljs-number">12</span>);
+            Date birthDate = <span class="hljs-keyword">null</span>;
+            <span class="hljs-keyword">try</span> {
+                birthDate = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;yy&quot;</span>).parse(birthCode.substring(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>));
+            } <span class="hljs-keyword">catch</span> (ParseException e) {
+                e.printStackTrace();
+            }
+            Calendar cal = Calendar.getInstance();
+            <span class="hljs-keyword">if</span> (birthDate != <span class="hljs-keyword">null</span>)
+                cal.setTime(birthDate);
+            <span class="hljs-keyword">if</span> (!valiDate(cal.get(Calendar.YEAR), Integer.valueOf(birthCode.substring(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)),
+                    Integer.valueOf(birthCode.substring(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>)))) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;10&#x4F4D;&#x8EAB;&#x4EFD;&#x7F16;&#x7801;&#x662F;&#x5426;&#x5408;&#x6CD5;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x8EAB;&#x4EFD;&#x8BC1;&#x4FE1;&#x606F;&#x6570;&#x7EC4;
+     *         &lt;p&gt;
+     *         [0] - &#x53F0;&#x6E7E;&#x3001;&#x6FB3;&#x95E8;&#x3001;&#x9999;&#x6E2F; [1] - &#x6027;&#x522B;(&#x7537;M,&#x5973;F,&#x672A;&#x77E5;N) [2] - &#x662F;&#x5426;&#x5408;&#x6CD5;(&#x5408;&#x6CD5;true,&#x4E0D;&#x5408;&#x6CD5;false)
+     *         &#x82E5;&#x4E0D;&#x662F;&#x8EAB;&#x4EFD;&#x8BC1;&#x4EF6;&#x53F7;&#x7801;&#x5219;&#x8FD4;&#x56DE;null
+     *         &lt;/p&gt;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String[] validateIdCard10(String idCard) {
+        String[] info = <span class="hljs-keyword">new</span> String[<span class="hljs-number">3</span>];
+        String card = idCard.replaceAll(<span class="hljs-string">&quot;[\\(|\\)]&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-keyword">if</span> (card.length() != <span class="hljs-number">8</span> &amp;&amp; card.length() != <span class="hljs-number">9</span> &amp;&amp; idCard.length() != <span class="hljs-number">10</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        <span class="hljs-keyword">if</span> (idCard.matches(<span class="hljs-string">&quot;^[a-zA-Z][0-9]{9}$&quot;</span>)) { <span class="hljs-comment">// &#x53F0;&#x6E7E;</span>
+            info[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;&#x53F0;&#x6E7E;&quot;</span>;
+         <span class="hljs-comment">//   org.jeecgframework.core.util.LogUtil.info(&quot;11111&quot;);</span>
+            String char2 = idCard.substring(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+            <span class="hljs-keyword">if</span> (char2.equals(<span class="hljs-string">&quot;1&quot;</span>)) {
+                info[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;M&quot;</span>;
+         <span class="hljs-comment">//       org.jeecgframework.core.util.LogUtil.info(&quot;MMMMMMM&quot;);</span>
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (char2.equals(<span class="hljs-string">&quot;2&quot;</span>)) {
+                info[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;F&quot;</span>;
+           <span class="hljs-comment">//     org.jeecgframework.core.util.LogUtil.info(&quot;FFFFFFF&quot;);</span>
+            } <span class="hljs-keyword">else</span> {
+                info[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;N&quot;</span>;
+                info[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;false&quot;</span>;
+           <span class="hljs-comment">//     org.jeecgframework.core.util.LogUtil.info(&quot;NNNN&quot;);</span>
+                <span class="hljs-keyword">return</span> info;
+            }
+            info[<span class="hljs-number">2</span>] = validateTWCard(idCard) ? <span class="hljs-string">&quot;true&quot;</span> : <span class="hljs-string">&quot;false&quot;</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (idCard.matches(<span class="hljs-string">&quot;^[1|5|7][0-9]{6}\\(?[0-9A-Z]\\)?$&quot;</span>)) { <span class="hljs-comment">// &#x6FB3;&#x95E8;</span>
+            info[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;&#x6FB3;&#x95E8;&quot;</span>;
+            info[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;N&quot;</span>;
+            <span class="hljs-comment">// TODO</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (idCard.matches(<span class="hljs-string">&quot;^[A-Z]{1,2}[0-9]{6}\\(?[0-9A]\\)?$&quot;</span>)) { <span class="hljs-comment">// &#x9999;&#x6E2F;</span>
+            info[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;&#x9999;&#x6E2F;&quot;</span>;
+            info[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;N&quot;</span>;
+            info[<span class="hljs-number">2</span>] = validateHKCard(idCard) ? <span class="hljs-string">&quot;true&quot;</span> : <span class="hljs-string">&quot;false&quot;</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+        <span class="hljs-keyword">return</span> info;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;&#x53F0;&#x6E7E;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            &#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x7B26;&#x5408;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">validateTWCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        String start = idCard.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+        String mid = idCard.substring(<span class="hljs-number">1</span>, <span class="hljs-number">9</span>);
+        String end = idCard.substring(<span class="hljs-number">9</span>, <span class="hljs-number">10</span>);
+        Integer iStart = twFirstCode.get(start);
+        Integer sum = iStart / <span class="hljs-number">10</span> + (iStart % <span class="hljs-number">10</span>) * <span class="hljs-number">9</span>;
+        <span class="hljs-keyword">char</span>[] chars = mid.toCharArray();
+        Integer iflag = <span class="hljs-number">8</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : chars) {
+            sum = sum + Integer.valueOf(c + <span class="hljs-string">&quot;&quot;</span>) * iflag;
+            iflag--;
+        }
+        <span class="hljs-keyword">return</span> (sum % <span class="hljs-number">10</span> == <span class="hljs-number">0</span> ? <span class="hljs-number">0</span> : (<span class="hljs-number">10</span> - sum % <span class="hljs-number">10</span>)) == Integer.valueOf(end) ? <span class="hljs-keyword">true</span> : <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;&#x9999;&#x6E2F;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;(&#x5B58;&#x5728;Bug&#xFF0C;&#x90E8;&#x4EFD;&#x7279;&#x6B8A;&#x8EAB;&#x4EFD;&#x8BC1;&#x65E0;&#x6CD5;&#x68C0;&#x67E5;)
+     * &lt;p&gt;
+     * &#x8EAB;&#x4EFD;&#x8BC1;&#x524D;2&#x4F4D;&#x4E3A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x7B26;&#x5219;&#x8868;&#x793A;&#x7B2C;&#x4E00;&#x4F4D;&#x662F;&#x7A7A;&#x683C;&#xFF0C;&#x5BF9;&#x5E94;&#x6570;&#x5B57;58 &#x524D;2&#x4F4D;&#x82F1;&#x6587;&#x5B57;&#x7B26;A-Z&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x6570;&#x5B57;10-35
+     * &#x6700;&#x540E;&#x4E00;&#x4F4D;&#x6821;&#x9A8C;&#x7801;&#x4E3A;0-9&#x7684;&#x6570;&#x5B57;&#x52A0;&#x4E0A;&#x5B57;&#x7B26;&quot;A&quot;&#xFF0C;&quot;A&quot;&#x4EE3;&#x8868;10
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * &#x5C06;&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x4E3A;&#x6570;&#x5B57;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x4E58;9-1&#x76F8;&#x52A0;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x6574;&#x9664;11&#x5219;&#x8BC1;&#x4EF6;&#x53F7;&#x7801;&#x6709;&#x6548;
+     * &lt;/p&gt;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x9A8C;&#x8BC1;&#x7801;&#x662F;&#x5426;&#x7B26;&#x5408;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">validateHKCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        String card = idCard.replaceAll(<span class="hljs-string">&quot;[\\(|\\)]&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        Integer sum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (card.length() == <span class="hljs-number">9</span>) {
+            sum = (Integer.valueOf(card.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).toUpperCase().toCharArray()[<span class="hljs-number">0</span>]) - <span class="hljs-number">55</span>) * <span class="hljs-number">9</span>
+                    + (Integer.valueOf(card.substring(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>).toUpperCase().toCharArray()[<span class="hljs-number">0</span>]) - <span class="hljs-number">55</span>) * <span class="hljs-number">8</span>;
+            card = card.substring(<span class="hljs-number">1</span>, <span class="hljs-number">9</span>);
+        } <span class="hljs-keyword">else</span> {
+            sum = <span class="hljs-number">522</span> + (Integer.valueOf(card.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).toUpperCase().toCharArray()[<span class="hljs-number">0</span>]) - <span class="hljs-number">55</span>) * <span class="hljs-number">8</span>;
+        }
+        String mid = card.substring(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>);
+        String end = card.substring(<span class="hljs-number">7</span>, <span class="hljs-number">8</span>);
+        <span class="hljs-keyword">char</span>[] chars = mid.toCharArray();
+        Integer iflag = <span class="hljs-number">7</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : chars) {
+            sum = sum + Integer.valueOf(c + <span class="hljs-string">&quot;&quot;</span>) * iflag;
+            iflag--;
+        }
+        <span class="hljs-keyword">if</span> (end.toUpperCase().equals(<span class="hljs-string">&quot;A&quot;</span>)) {
+            sum = sum + <span class="hljs-number">10</span>;
+        } <span class="hljs-keyword">else</span> {
+            sum = sum + Integer.valueOf(end);
+        }
+        <span class="hljs-keyword">return</span> (sum % <span class="hljs-number">11</span> == <span class="hljs-number">0</span>) ? <span class="hljs-keyword">true</span> : <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5C06;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x5B57;&#x6570;&#x7EC4;
+     * 
+     * <span class="hljs-doctag">@param</span> ca
+     *            &#x5B57;&#x7B26;&#x6570;&#x7EC4;
+     * <span class="hljs-doctag">@return</span> &#x6570;&#x5B57;&#x6570;&#x7EC4;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>[] converCharToInt(<span class="hljs-keyword">char</span>[] ca) {
+        <span class="hljs-keyword">int</span> len = ca.length;
+        <span class="hljs-keyword">int</span>[] iArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len];
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+                iArr[i] = Integer.parseInt(String.valueOf(ca[i]));
+            }
+        } <span class="hljs-keyword">catch</span> (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        <span class="hljs-keyword">return</span> iArr;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5C06;&#x8EAB;&#x4EFD;&#x8BC1;&#x7684;&#x6BCF;&#x4F4D;&#x548C;&#x5BF9;&#x5E94;&#x4F4D;&#x7684;&#x52A0;&#x6743;&#x56E0;&#x5B50;&#x76F8;&#x4E58;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x5F97;&#x5230;&#x548C;&#x503C;
+     * 
+     * <span class="hljs-doctag">@param</span> iArr
+     * <span class="hljs-doctag">@return</span> &#x8EAB;&#x4EFD;&#x8BC1;&#x7F16;&#x7801;&#x3002;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getPowerSum</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] iArr)</span> </span>{
+        <span class="hljs-keyword">int</span> iSum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (power.length == iArr.length) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; iArr.length; i++) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; power.length; j++) {
+                    <span class="hljs-keyword">if</span> (i == j) {
+                        iSum = iSum + iArr[i] * power[j];
+                    }
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> iSum;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5C06;power&#x548C;&#x503C;&#x4E0E;11&#x53D6;&#x6A21;&#x83B7;&#x5F97;&#x4F59;&#x6570;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#x7801;&#x5224;&#x65AD;
+     * 
+     * <span class="hljs-doctag">@param</span> iSum
+     * <span class="hljs-doctag">@return</span> &#x6821;&#x9A8C;&#x4F4D;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getCheckCode18</span><span class="hljs-params">(<span class="hljs-keyword">int</span> iSum)</span> </span>{
+        String sCode = <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">switch</span> (iSum % <span class="hljs-number">11</span>) {
+        <span class="hljs-keyword">case</span> <span class="hljs-number">10</span>:
+            sCode = <span class="hljs-string">&quot;2&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">9</span>:
+            sCode = <span class="hljs-string">&quot;3&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:
+            sCode = <span class="hljs-string">&quot;4&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+            sCode = <span class="hljs-string">&quot;5&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+            sCode = <span class="hljs-string">&quot;6&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+            sCode = <span class="hljs-string">&quot;7&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+            sCode = <span class="hljs-string">&quot;8&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+            sCode = <span class="hljs-string">&quot;9&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+            sCode = <span class="hljs-string">&quot;x&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+            sCode = <span class="hljs-string">&quot;0&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+            sCode = <span class="hljs-string">&quot;1&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+        }
+        <span class="hljs-keyword">return</span> sCode;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x5E74;&#x9F84;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x5E74;&#x9F84;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAgeByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        <span class="hljs-keyword">int</span> iAge = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (idCard.length() == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        String year = idCard.substring(<span class="hljs-number">6</span>, <span class="hljs-number">10</span>);
+        Calendar cal = Calendar.getInstance();
+        <span class="hljs-keyword">int</span> iCurrYear = cal.get(Calendar.YEAR);
+        iAge = iCurrYear - Integer.valueOf(year);
+        <span class="hljs-keyword">return</span> iAge;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x751F;&#x65E5;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x751F;&#x65E5;(yyyyMMdd)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getBirthByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        Integer len = idCard.length();
+        <span class="hljs-keyword">if</span> (len &lt; CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        <span class="hljs-keyword">return</span> idCard.substring(<span class="hljs-number">6</span>, <span class="hljs-number">14</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x751F;&#x65E5;&#x5E74;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x751F;&#x65E5;(yyyy)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Short <span class="hljs-title">getYearByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        Integer len = idCard.length();
+        <span class="hljs-keyword">if</span> (len &lt; CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        <span class="hljs-keyword">return</span> Short.valueOf(idCard.substring(<span class="hljs-number">6</span>, <span class="hljs-number">10</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x751F;&#x65E5;&#x6708;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x751F;&#x65E5;(MM)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Short <span class="hljs-title">getMonthByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        Integer len = idCard.length();
+        <span class="hljs-keyword">if</span> (len &lt; CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        <span class="hljs-keyword">return</span> Short.valueOf(idCard.substring(<span class="hljs-number">10</span>, <span class="hljs-number">12</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x751F;&#x65E5;&#x5929;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard
+     *            &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x751F;&#x65E5;(dd)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Short <span class="hljs-title">getDateByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        Integer len = idCard.length();
+        <span class="hljs-keyword">if</span> (len &lt; CHINA_ID_MIN_LENGTH) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        <span class="hljs-keyword">return</span> Short.valueOf(idCard.substring(<span class="hljs-number">12</span>, <span class="hljs-number">14</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x6027;&#x522B;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x53F7;
+     * <span class="hljs-doctag">@return</span> &#x6027;&#x522B;(M-&#x7537;&#xFF0C;F-&#x5973;&#xFF0C;N-&#x672A;&#x77E5;)
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getGenderByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        String sGender = <span class="hljs-string">&quot;N&quot;</span>;
+        <span class="hljs-keyword">if</span> (idCard.length() == CHINA_ID_MIN_LENGTH) {
+            idCard = conver15CardTo18(idCard);
+        }
+        String sCardNum = idCard.substring(<span class="hljs-number">16</span>, <span class="hljs-number">17</span>);
+        <span class="hljs-keyword">if</span> (Integer.parseInt(sCardNum) % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>) {
+            sGender = <span class="hljs-string">&quot;M&quot;</span>;
+        } <span class="hljs-keyword">else</span> {
+            sGender = <span class="hljs-string">&quot;F&quot;</span>;
+        }
+        <span class="hljs-keyword">return</span> sGender;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x8EAB;&#x4EFD;&#x7F16;&#x53F7;&#x83B7;&#x53D6;&#x6237;&#x7C4D;&#x7701;&#x4EFD;
+     * 
+     * <span class="hljs-doctag">@param</span> idCard &#x8EAB;&#x4EFD;&#x7F16;&#x7801;
+     * <span class="hljs-doctag">@return</span> &#x7701;&#x7EA7;&#x7F16;&#x7801;&#x3002;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getProvinceByIdCard</span><span class="hljs-params">(String idCard)</span> </span>{
+        <span class="hljs-keyword">int</span> len = idCard.length();
+        String sProvince = <span class="hljs-keyword">null</span>;
+        String sProvinNum = <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">if</span> (len == CHINA_ID_MIN_LENGTH || len == CHINA_ID_MAX_LENGTH) {
+            sProvinNum = idCard.substring(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+        }
+        sProvince = cityCodes.get(sProvinNum);
+        <span class="hljs-keyword">return</span> sProvince;
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6570;&#x5B57;&#x9A8C;&#x8BC1;
+     * 
+     * <span class="hljs-doctag">@param</span> val
+     * <span class="hljs-doctag">@return</span> &#x63D0;&#x53D6;&#x7684;&#x6570;&#x5B57;&#x3002;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isNum</span><span class="hljs-params">(String val)</span> </span>{
+        <span class="hljs-keyword">return</span> val == <span class="hljs-keyword">null</span> || <span class="hljs-string">&quot;&quot;</span>.equals(val) ? <span class="hljs-keyword">false</span> : val.matches(<span class="hljs-string">&quot;^[0-9]*$&quot;</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * &#x9A8C;&#x8BC1;&#x5C0F;&#x4E8E;&#x5F53;&#x524D;&#x65E5;&#x671F; &#x662F;&#x5426;&#x6709;&#x6548;
+     * 
+     * <span class="hljs-doctag">@param</span> iYear
+     *            &#x5F85;&#x9A8C;&#x8BC1;&#x65E5;&#x671F;(&#x5E74;)
+     * <span class="hljs-doctag">@param</span> iMonth
+     *            &#x5F85;&#x9A8C;&#x8BC1;&#x65E5;&#x671F;(&#x6708; 1-12)
+     * <span class="hljs-doctag">@param</span> iDate
+     *            &#x5F85;&#x9A8C;&#x8BC1;&#x65E5;&#x671F;(&#x65E5;)
+     * <span class="hljs-doctag">@return</span> &#x662F;&#x5426;&#x6709;&#x6548;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">valiDate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> iYear, <span class="hljs-keyword">int</span> iMonth, <span class="hljs-keyword">int</span> iDate)</span> </span>{
+        Calendar cal = Calendar.getInstance();
+        <span class="hljs-keyword">int</span> year = cal.get(Calendar.YEAR);
+        <span class="hljs-keyword">int</span> datePerMonth;
+        <span class="hljs-keyword">if</span> (iYear &lt; MIN || iYear &gt;= year) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">if</span> (iMonth &lt; <span class="hljs-number">1</span> || iMonth &gt; <span class="hljs-number">12</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+        <span class="hljs-keyword">switch</span> (iMonth) {
+        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+        <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+        <span class="hljs-keyword">case</span> <span class="hljs-number">9</span>:
+        <span class="hljs-keyword">case</span> <span class="hljs-number">11</span>:
+            datePerMonth = <span class="hljs-number">30</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+            <span class="hljs-keyword">boolean</span> dm = ((iYear % <span class="hljs-number">4</span> == <span class="hljs-number">0</span> &amp;&amp; iYear % <span class="hljs-number">100</span> != <span class="hljs-number">0</span>) || (iYear % <span class="hljs-number">400</span> == <span class="hljs-number">0</span>))
+                    &amp;&amp; (iYear &gt; MIN &amp;&amp; iYear &lt; year);
+            datePerMonth = dm ? <span class="hljs-number">29</span> : <span class="hljs-number">28</span>;
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:
+            datePerMonth = <span class="hljs-number">31</span>;
+        }
+        <span class="hljs-keyword">return</span> (iDate &gt;= <span class="hljs-number">1</span>) &amp;&amp; (iDate &lt;= datePerMonth);
+    }
+}
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; wu_mingsheng@126.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;
+2020-01-19 13:42:27
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="7.Java-Bean-Validate.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 七、校验注解参考手册">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"八、自定义校验规则","level":"1.3.8","depth":2,"previous":{"title":"七、校验注解参考手册","level":"1.3.7","depth":2,"path":"bean-validate/7.Java-Bean-Validate.md","ref":"bean-validate/7.Java-Bean-Validate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","theme-comscore","chapter-fold","splitter","tbfed-pagefooter","code","page-toc-button","popup","back-to-top-button","emphasize"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy wu_mingsheng@126.com 2017","modify_label":"该文件最后修改时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"emphasize":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bean-validate/8.Java-Bean-Validate.md","mtime":"2020-01-19T05:42:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T06:25:13.344Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
