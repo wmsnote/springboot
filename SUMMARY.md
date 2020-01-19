@@ -15,3 +15,4 @@
     * [六、手动校验工具类](bean-validate/6.Java-Bean-Validate.md)
     * [七、校验注解参考手册](bean-validate/7.Java-Bean-Validate.md)
     * [八、自定义校验规则](bean-validate/8.Java-Bean-Validate.md)
+* [SpringBoot最流行的16条实践解读!](Springboot-16-most-popular-practices.md)
