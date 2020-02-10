@@ -126,8 +126,8 @@ log.info("这里是打印信息{}", traceId);
 2019-08-10 16:34:04.766 http-nio-9191-exec-2 | [59123bc7-a03e-41b6-89fc-cf984369896c] | INFO  c.s.p.o.l.facade.impl.XxxFacade invoke facade method=mdcFacadeTest param=罗海鹏trace
 2019-08-10 16:34:04.883 http-nio-9191-exec-2 | [59123bc7-a03e-41b6-89fc-cf984369896c] | INFO  com.lhp.aspects.RequestLogAspect 请求出参: "MDC测试"
 2019-08-10 16:34:04.883 http-nio-9191-exec-2 | [59123bc7-a03e-41b6-89fc-cf984369896c] | INFO  com.lhp.aspects.RequestLogAspect 执行时间: 174
-``` 
 
+```
 
 可以看到，这次日志输出%X{X-B3-TraceId}的位置就不在是空了，而是一串UUID，并且在一次请求之内，UUID都是一样的，这样我们在排查问题时，首先找到了问题的入口日志，在搜索该日志的UUID，就整个请求内的所有日志找出来了，提高了我们排查问题的效率。
 
