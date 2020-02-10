@@ -6,6 +6,7 @@
     * [数据库中间件详解 | 珍藏版](part-db-table/003.md)
 * [boot日志](log/readme.md)
     * [springboot使用logback](log/sboot-logback.md)
+    * [JAVA日志MDC追踪快速定位问题源头](log/mdc.md)
 * [字段校验](bean-validate/readme.md)
     * [一、最佳实践](bean-validate/1.Java-Bean-Validate.md)
     * [二、最佳实践](bean-validate/2.Java-Bean-Validate.md)
