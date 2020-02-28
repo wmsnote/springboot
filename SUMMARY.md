@@ -19,3 +19,5 @@
 * [SpringBoot最流行的16条实践解读!](Springboot-16-most-popular-practices.md)
 * [docker篇](docker/readme.md)
   * [如何解决lib和class文件分离](docker/lib-class.md)
+* [maven管理](maven/readme.md)
+  * [版本依赖管理](maven/dependency-management.md)
